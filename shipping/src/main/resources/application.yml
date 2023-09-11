@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: shipping
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/shipping?allowPublicKeyRetrieval=true&sslMode=DISABLED
+    username: root
+    password: admin
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
